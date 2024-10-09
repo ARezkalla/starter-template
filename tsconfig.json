@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "jsx": "react-jsx",
+    "types": ["vite/client", "vite-plugin-svgr/client"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@components/*": ["src/app/components/*"],
+      "@screens/*": ["src/screens/*"],
+      "@store/*": ["src/app/store/*"],
+      "@assets/*": ["src/app/assets/*"],
+      "@features/*": ["src/features/*"]
+    }
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

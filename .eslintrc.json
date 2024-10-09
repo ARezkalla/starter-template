@@ -1,0 +1,188 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2017": true,
+    "es2020": true,
+    "es6": true,
+    "jest": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "eslint:recommended",
+    "plugin:import/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "react-hooks"],
+  "rules": {
+    "@typescript-eslint/ban-ts-comment": 0,
+    "@typescript-eslint/ban-types": 1,
+    "@typescript-eslint/camelcase": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/explicit-member-accessibility": 0,
+    "@typescript-eslint/explicit-module-boundary-types": 0,
+    "@typescript-eslint/indent": 0,
+    "@typescript-eslint/member-delimiter-style": 0,
+    "@typescript-eslint/no-angle-bracket-type-assertion": 0,
+    "@typescript-eslint/no-empty-interface": 1,
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-extra-semi": 1,
+    "@typescript-eslint/no-non-null-assertion": 0,
+    "@typescript-eslint/no-unused-vars": 1,
+    "@typescript-eslint/no-use-before-define": 1,
+    "@typescript-eslint/no-var-requires": 1,
+    "array-callback-return": 1,
+    "arrow-body-style": ["warn"],
+    "arrow-parens": ["warn"],
+    "arrow-spacing": [
+      "error",
+      {
+        "after": true,
+        "before": true
+      }
+    ],
+    "camelcase": 1,
+    "consistent-return": "warn",
+    "default-param-last": 1,
+    "dot-notation": 1,
+    "eol-last": [2, "always"],
+    "eqeqeq": [1, "always"],
+    "global-require": 1,
+    "import/extensions": 0,
+    "import/named": 0,
+    "import/namespace": 0,
+    "import/newline-after-import": 0,
+    "import/no-duplicates": 0,
+    "import/no-dynamic-require": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/no-named-as-default": 0,
+    "import/no-named-as-default-member": 0,
+    "import/no-unresolved": 0,
+    "import/no-useless-path-segments": 1,
+    "import/order": 0,
+    "import/prefer-default-export": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/control-has-associated-label": 0,
+    "jsx-a11y/iframe-has-title": 0,
+    "jsx-a11y/label-has-for": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "jsx-quotes": [1, "prefer-double"],
+    "max-len": [1, 100, 2],
+    "no-confusing-arrow": 0,
+    "no-console": 1,
+    "no-empty": 1,
+    "no-extra-boolean-cast": 0,
+    "no-extra-parens": [
+      0,
+      "all",
+      {
+        "conditionalAssign": false,
+        "enforceForArrowConditionals": false,
+        "ignoreJSX": "none",
+        "nestedBinaryExpressions": false
+      }
+    ],
+    "no-extra-semi": 1,
+    "no-mixed-operators": [
+      1,
+      {
+        "allowSamePrecedence": true
+      }
+    ],
+    "no-mixed-spaces-and-tabs": 1,
+    "no-param-reassign": 0,
+    "no-prototype-builtins": 1,
+    "no-return-assign": 1,
+    "no-script-url": 0,
+    "no-shadow": 1,
+    "no-undef": 0,
+    "no-unneeded-ternary": 1,
+    "no-unreachable": 1,
+    "react-hooks/rules-of-hooks": 1,
+    "react-hooks/exhaustive-deps": 1,
+    "no-unused-expressions": 0,
+    "no-unused-vars": 1,
+    "no-use-before-define": 0,
+    "prefer-destructuring": "warn",
+    "prefer-promise-reject-errors": 0,
+    "prefer-template": 0,
+    "quotes": [1, "double"],
+    "react/button-has-type": 0,
+    "react/destructuring-assignment": 0,
+    "react/display-name": 0,
+    "react/jsx-boolean-value": 0,
+    "react/jsx-closing-bracket-location": [
+      0,
+      {
+        "nonEmpty": "after-props",
+        "selfClosing": "props-aligned"
+      }
+    ],
+    "react/jsx-closing-tag-location": 0,
+    "react/jsx-curly-brace-presence": 1,
+    "react/jsx-curly-spacing": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-first-prop-new-line": 0,
+    "react/jsx-fragments": 1,
+    "react/jsx-indent": 0,
+    "react/jsx-no-bind": 0,
+    "react/jsx-no-constructed-context-values": 1,
+    "react/jsx-no-useless-fragment": 1,
+    "react/jsx-one-expression-per-line": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/jsx-tag-spacing": [
+      2,
+      {
+        "beforeSelfClosing": "always"
+      }
+    ],
+    "react/jsx-wrap-multilines": [
+      0,
+      {
+        "arrow": "ignore",
+        "assignment": "parens-new-line",
+        "condition": "ignore",
+        "declaration": "parens-new-line",
+        "logical": "ignore",
+        "prop": "ignore",
+        "return": "parens-new-line"
+      }
+    ],
+    "react/no-access-state-in-setstate": 0,
+    "react/no-array-index-key": 1,
+    "react/no-arrow-function-lifecycle": 1,
+    "react/no-invalid-html-attribute": 1,
+    "react/no-render-return-value": 1,
+    "react/no-unstable-nested-components": 1,
+    "react/no-unused-class-component-methods": 1,
+    "react/no-unused-prop-types": 1,
+    "react/prop-types": 0,
+    "react/require-default-props": 0,
+    "react/self-closing-comp": 0,
+    "react/state-in-constructor": 0,
+    "react/static-property-placement": 0,
+    "semi": 0
+  },
+  "settings": {
+    "react": {
+      "import/resolver": {
+        "alias": {
+          "extensions": [".ts", ".js", ".tsx"],
+          "map": [["~", "./src/"]]
+        }
+      },
+      // Tells eslint-plugin-react to automatically detect the version of React to use
+      "version": "detect"
+    }
+  }
+}
