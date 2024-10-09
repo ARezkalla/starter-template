@@ -2,10 +2,12 @@ import { createSlice } from "@reduxjs/toolkit"
 
 export interface IInitialStateRoot {
   isUserLogged: boolean
+  isDrawerOpen: boolean
 }
 
 const initialState: IInitialStateRoot = {
-  isUserLogged: false,
+  isUserLogged: true,
+  isDrawerOpen: false,
 }
 
 const rootSlice = createSlice({
@@ -15,9 +17,12 @@ const rootSlice = createSlice({
     setUserIsLogged: (state, action) => {
       state.isUserLogged = action.payload
     },
+    setIsDrawerOpen: (state, action) => {
+      state.isDrawerOpen = action.payload
+    },
   },
 })
 
-export const { setUserIsLogged } = rootSlice.actions
+export const { setUserIsLogged, setIsDrawerOpen } = rootSlice.actions
 
 export default rootSlice.reducer

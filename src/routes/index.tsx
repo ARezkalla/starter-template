@@ -7,7 +7,7 @@ import {
   createRoutesFromElements,
 } from "react-router-dom"
 import ProtectedRoute from "./ProtectedRoute"
-import Login from "@features/Login"
+import Login from "@features/auth/components/Login"
 import Dashboard from "@features/Dashboard"
 
 const Routes = () => {
