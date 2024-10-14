@@ -41,9 +41,9 @@ const LoginForm = () => {
   const handleOnLogin = async (data: { email: string; password: string }) => {
     if (!isValid) return
     try {
-      //here goes the sign in
+      //here goes the sign in logic
       dispatch(setUserIsLogged(true))
-      navigate("dashboard")
+      navigate("/dashboard")
     } catch (error) {
       if (error instanceof Error) {
         console.error(error)

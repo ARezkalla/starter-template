@@ -17,7 +17,6 @@ const Routes = () => {
         <Route element={<Login />} path="/login" />
         <Route element={<AppViewContainer />}>
           <Route index element={<Navigate to="dashboard" />} />
-
           <Route
             path="/dashboard"
             element={<ProtectedRoute element={<Dashboard />} />}

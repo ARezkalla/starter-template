@@ -10,16 +10,16 @@ import {
   List,
   Box,
 } from "@mui/material"
-import { theme } from "@/app/theme"
 import { NavLink } from "react-router-dom"
 import { styles } from "./styles"
 import { useAppSelector } from "@/app/store/hooks"
 import AppTypography from "@components/AppTypography"
+import SelectedIcon from "./components/SelectedIcon"
 
 const CATEGORIES = [
   {
     category: "dashboard",
-    icon: <DashboardOutlinedIcon />,
+    iconCode: <DashboardOutlinedIcon />,
     text: "dashboard",
   },
 ]
@@ -46,8 +46,8 @@ const AppMainMenu = () => {
         <List>
           {CATEGORIES.map((category) => (
             <NavLink
-              key={category.idsAvailable[0]}
-              to={category.idsAvailable[0]}
+              key={category.category}
+              to={category.category}
               style={styles.navLink}
             >
               {({ isActive }) => (
@@ -68,7 +68,7 @@ const AppMainMenu = () => {
                       title={
                         !isDrawerOpen ? (
                           <AppTypography capitalizeFirstLetter>
-                            {category}
+                            {category.text}
                           </AppTypography>
                         ) : (
                           ""
@@ -77,11 +77,12 @@ const AppMainMenu = () => {
                       placement="right-start"
                       arrow
                     >
-                      <ListItemIcon
-                        sx={styles.listIcon}
-                        iconCode={category.iconCode}
-                        isActive={isActive}
-                      />
+                      <ListItemIcon sx={styles.listIcon}>
+                        <SelectedIcon
+                          iconCode={category.iconCode}
+                          isActive={isActive}
+                        />
+                      </ListItemIcon>
                     </Tooltip>
                   </ListItemButton>
                 </ListItem>

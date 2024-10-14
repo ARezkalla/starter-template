@@ -1,10 +1,6 @@
-import React from "react"
-// import Copyright from "core/components/Copyright"
+import { Box, Paper } from "@mui/material"
 
-import { Box, Divider, Paper } from "@mui/material"
-
-// import ErrorMessage from "./subcomponents/ErrorMessage"
-// import Logo from "./subcomponents/Logo"
+import logo from "@assets/coreic.png"
 import { styles } from "./styles"
 
 import LoginForm from "./components/LoginForm"
@@ -13,11 +9,8 @@ const Login = () => {
   return (
     <Box sx={styles.root}>
       <Paper sx={styles.paperContainer} elevation={3}>
-        {/* <ErrorMessage /> */}
-        {/* <Logo /> */}
+        <Box component={"img"} src={logo} sx={{ height: "120" }} />
         <LoginForm />
-        <Divider />
-        <Box sx={styles.copyright}>{/* <Copyright /> */}</Box>
       </Paper>
     </Box>
   )
