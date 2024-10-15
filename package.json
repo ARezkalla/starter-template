@@ -6,7 +6,7 @@
   "dependencies": {
     "@emotion/react": "11.10.6",
     "@emotion/styled": "11.10.6",
-    "@hookform/resolvers": "^3.9.0",
+    "@hookform/resolvers": "3.9.0",
     "@mui/icons-material": "5.11.11",
     "@mui/material": "5.15.14",
     "@reduxjs/toolkit": "1.9.5",
@@ -14,7 +14,7 @@
     "axios": "1.6.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.53.0",
+    "react-hook-form": "7.53.0",
     "react-redux": "8.0.5",
     "react-router-dom": "6.9.0",
     "styled-components": "6.1.8",
@@ -22,7 +22,7 @@
     "vite": "4.5.0",
     "vite-tsconfig-paths": "4.2.1",
     "web-vitals": "2.1.0",
-    "zod": "^3.23.8"
+    "zod": "3.23.8"
   },
   "description": "A web-based tool for building owners, EPC experts and optimization agents or technicians helping them to define, plan, adapt and realize refurbishment actions during building operation.",
   "license": "UNLICENSED",
@@ -83,7 +83,16 @@
     "@vitest/coverage-v8": "0.34.6",
     "@vitest/ui": "0.34.6",
     "jsdom": "22.1.0",
+    "msw": "2.4.11",
     "vite-plugin-svgr": "4.1.0",
     "vitest": "0.34.6"
+  },
+  "engines": {
+    "node": "21.6.2"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }

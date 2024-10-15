@@ -4,6 +4,11 @@ import App from "./App"
 import { Provider } from "react-redux"
 import reportWebVitals from "./reportWebVitals"
 import { store } from "@store/store"
+import { enableMocks } from "../src/mocks/helpers"
+
+const ENABLE_MOCKS = true
+
+if (ENABLE_MOCKS && process.env.NODE_ENV === "development") enableMocks()
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 root.render(
