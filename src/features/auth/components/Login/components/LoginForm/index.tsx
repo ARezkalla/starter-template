@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Controller, useForm } from "react-hook-form"
-import { Box, Button, TextField, Theme } from "@mui/material"
+import { Box, Button, CircularProgress, TextField, Theme } from "@mui/material"
 import ShowPasswordIcon from "../ShowPasswordIcon"
 import { styles } from "./styles"
 import { useNavigate } from "react-router-dom"
@@ -146,7 +146,18 @@ const LoginForm = () => {
           color="primary"
           variant="contained"
         >
-          {"login"}
+          {isLoading ? (
+            <CircularProgress
+              size={20}
+              sx={{
+                color: "white",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            />
+          ) : (
+            "Login"
+          )}
         </Button>
       </Box>
     </form>
