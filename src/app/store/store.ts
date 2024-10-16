@@ -12,5 +12,13 @@ export const store = configureStore({
 
 setupListeners(store.dispatch)
 
+export const createTestStore = (initialState: any) =>
+  configureStore({
+    reducer: rootReducer,
+    preloadedState: initialState,
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({ serializableCheck: false }).concat(middlewares),
+  })
+
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
