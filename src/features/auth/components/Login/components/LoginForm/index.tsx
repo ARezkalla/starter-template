@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import { Controller, useForm } from "react-hook-form"
 import { Box, Button, TextField, Theme } from "@mui/material"
 import ShowPasswordIcon from "../ShowPasswordIcon"
@@ -8,6 +8,7 @@ import { useAppDispatch } from "@/app/store/hooks"
 import { setUserIsLogged } from "@/app/store/rootSlice"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { useLoginValidationMutation } from "./loginSlice"
 
 const loginSchema = z.object({
   email: z.string().min(1, "Email is required").email("Invalid email address"),
@@ -38,10 +39,23 @@ const LoginForm = () => {
 
   const dispatch = useAppDispatch()
 
+  const [loginValidation, { isLoading, isError }] = useLoginValidationMutation({
+    selectFromResult: ({ data, isLoading, isError }) => ({
+      data: data,
+      isLoading: isLoading,
+      isError: isError,
+    }),
+  })
+
   const handleOnLogin = async (data: { email: string; password: string }) => {
     if (!isValid) return
     try {
-      //here goes the sign in logic
+      const result = await loginValidation({
+        email: data.email,
+        password: data.password,
+      }).unwrap()
+      const { user } = result.data
+      console.log("user", user)
       dispatch(setUserIsLogged(true))
       navigate("/dashboard")
     } catch (error) {
