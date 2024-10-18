@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SelectedIcon > should render 1`] = `
+<div>
+  <div
+    class="MuiBox-root css-5azvwx"
+  >
+    <span
+      aria-hidden="true"
+      class="material-icons notranslate MuiIcon-root MuiIcon-fontSizeMedium css-1ka11ga-MuiIcon-root"
+    >
+      code
+    </span>
+  </div>
+</div>
+`;
