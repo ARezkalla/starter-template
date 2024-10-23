@@ -4,8 +4,8 @@ import { Box, Button, CircularProgress, TextField, Theme } from "@mui/material"
 import ShowPasswordIcon from "../ShowPasswordIcon"
 import { styles } from "./styles"
 import { useNavigate } from "react-router-dom"
-import { useAppDispatch } from "@/app/store/hooks"
-import { setUserIsLogged } from "@/app/store/rootSlice"
+import { useAppDispatch } from "@store/hooks"
+import { setThemeType, setUserIsLogged } from "@store/rootSlice"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useLoginValidationMutation } from "./loginSlice"
@@ -47,6 +47,12 @@ const LoginForm = () => {
     }),
   })
 
+
+  const getThemeFromLocalStorage = () => {
+  const theme = localStorage.getItem("themeMode")
+  return theme ? theme : "light"
+  }
+
   const handleOnLogin = async (data: { email: string; password: string }) => {
     if (!isValid) return
     try {
@@ -56,6 +62,7 @@ const LoginForm = () => {
       }).unwrap()
       const { user } = result.data
       console.log("user", user)
+      dispatch(setThemeType(getThemeFromLocalStorage()))
       dispatch(setUserIsLogged(true))
       navigate("/dashboard")
     } catch (error) {

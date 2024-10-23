@@ -7,11 +7,17 @@ export interface IInitialStateRoot {
   themeType: string
 }
 
+const getThemeFromLocalStorage = async () => {
+      const theme = await localStorage.getItem("themeMode")
+      return theme ? theme : "light"
+}
+
+
 const initialState: IInitialStateRoot = {
   isUserLogged: false,
   isDrawerOpen: false,
   isSettingsOpen: false,
-  themeType: "dark",
+  themeType: getThemeFromLocalStorage(),
 }
 
 const rootSlice = createSlice({

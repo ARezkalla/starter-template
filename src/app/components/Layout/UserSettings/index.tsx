@@ -1,7 +1,8 @@
 import { useContext, useEffect } from "react"
 
+import React from "react"
 import { ColorModeContext } from "../../../theme/ThemeProvider"
-import { availableThemes } from "../../../theme/Themes"
+import { availableThemes, themeMap } from "../../../theme/Themes"
 
 import { Box, FormControlLabel, FormGroup, Switch } from "@mui/material"
 
@@ -10,11 +11,17 @@ import { useAppDispatch, useAppSelector } from "@/app/store/hooks"
 import { setThemeType } from "@store/rootSlice"
 import LogoutButton from "./components/LogoutButton"
 
+
 const UserSettings = () => {
-  const { themeType } = useAppSelector((state) => state.global)
   const dispatch = useAppDispatch()
+  const {themeType} = useAppSelector((state) => state.global)
+
 
   const colorMode = useContext(ColorModeContext)
+
+  React.useEffect(() => {
+    colorMode.setColorMode(themeType)
+    }, [themeType, colorMode])
 
   const stopPropagation = (e: { stopPropagation: () => void }) => {
     e.stopPropagation()
@@ -24,18 +31,13 @@ const UserSettings = () => {
     const themeIndex = event.target.checked === true ? 1 : 0
     const themeId = availableThemes[themeIndex].id
 
-    dispatch(setThemeType(themeId))
     localStorage.setItem("themeMode", themeId)
+    dispatch(setThemeType(themeId))
+    colorMode.setColorMode(themeId)
   }
 
-  const onMountRender = async () => {
-    const savedAppTheme = await localStorage.getItem("themeMode")
-    colorMode.setColorMode(savedAppTheme)
-  }
 
-  useEffect(() => {
-    onMountRender()
-  }, [themeType])
+
 
   return (
     <Box sx={styles.root} onClick={stopPropagation}>
